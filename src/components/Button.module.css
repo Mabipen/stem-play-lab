@@ -1,0 +1,94 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 800;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background var(--transition-base), color var(--transition-base),
+              border-color var(--transition-base), transform var(--transition-spring),
+              box-shadow var(--transition-base);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+/* Sizes */
+.sm  { padding: var(--space-2) var(--space-4); font-size: var(--text-sm); }
+.md  { padding: var(--space-3) var(--space-6); font-size: var(--text-base); }
+.lg  { padding: var(--space-4) var(--space-8); font-size: var(--text-lg); }
+
+/* Variants */
+.primary {
+  background: var(--color-orange);
+  color: var(--color-white);
+  box-shadow: var(--shadow-orange);
+}
+.primary:hover {
+  background: var(--color-orange-dark);
+  box-shadow: 0 12px 28px rgba(255, 107, 53, 0.45);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-orange);
+  border-color: var(--color-orange);
+}
+.secondary:hover {
+  background: var(--color-orange);
+  color: var(--color-white);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-navy);
+  border-color: var(--color-border);
+}
+.ghost:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.navy {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+.navy:hover {
+  background: var(--color-navy-dark);
+  box-shadow: var(--shadow-lg);
+}
+
+.fullWidth { width: 100%; }
+
+/* Loading state */
+.loading { cursor: not-allowed; position: relative; }
+
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+/* For non-primary variants, match spinner colour to text */
+.secondary .spinner,
+.ghost .spinner,
+.navy .spinner {
+  border-color: rgba(0, 0, 0, 0.15);
+  border-top-color: currentColor;
+}
+
+.loadingText { opacity: 0.75; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

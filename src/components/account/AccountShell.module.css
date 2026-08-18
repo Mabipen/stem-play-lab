@@ -1,0 +1,140 @@
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-cream);
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--color-white);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: block;
+  margin-bottom: var(--space-8);
+  padding: 0 var(--space-2);
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.navLink {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.navLink:hover {
+  background: var(--color-cream);
+}
+
+.navLinkActive {
+  background: var(--color-orange-light, var(--color-orange));
+  color: var(--color-navy);
+}
+
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.userName {
+  font-weight: 800;
+  font-size: var(--text-sm);
+  margin: 0 0 var(--space-1);
+  padding: 0 var(--space-2);
+}
+
+.userRole {
+  font-size: var(--text-xs);
+  color: var(--color-text);
+  opacity: 0.7;
+  margin: 0 0 var(--space-3);
+  padding: 0 var(--space-2);
+  text-transform: capitalize;
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-default);
+  background: transparent;
+  color: var(--color-text);
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.logoutBtn:hover {
+  background: var(--color-cream);
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-10) var(--space-8);
+  max-width: 960px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: var(--space-4);
+  }
+
+  .logo {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    order: 3;
+  }
+
+  .footer {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .userName, .userRole {
+    display: none;
+  }
+
+  .main {
+    padding: var(--space-6) var(--space-4);
+  }
+}

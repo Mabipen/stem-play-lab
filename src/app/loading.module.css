@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--space-8);
+}
+
+.planetContainer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transform: rotateZ(-15deg);
+}
+
+.planet {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: #f06292;
+  border-radius: 50%;
+  box-shadow: inset -8px -8px 0px rgba(216, 27, 96, 0.4);
+  transform: translateZ(0); /* Anchor for 3D sorting */
+}
+
+.ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 120px;
+  height: 120px;
+  border: 5px solid #f4d03f;
+  border-radius: 50%;
+  animation: orbit 2.5s linear infinite;
+}
+
+@keyframes orbit {
+  0% { transform: rotateX(75deg) rotateZ(0deg); }
+  100% { transform: rotateX(75deg) rotateZ(360deg); }
+}
+
+.text {
+  font-family: var(--font-display);
+  color: var(--color-navy);
+  font-size: var(--text-lg);
+  animation: pulse 1.5s ease-in-out infinite;
+  letter-spacing: 0.05em;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}

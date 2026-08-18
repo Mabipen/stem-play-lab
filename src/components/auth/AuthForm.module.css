@@ -1,0 +1,76 @@
+.page {
+  padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-24);
+  background: var(--color-cream);
+  min-height: 100vh;
+}
+
+.card {
+  max-width: 440px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+
+.field {
+  margin-bottom: var(--space-5);
+}
+
+.label {
+  display: block;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-2);
+  color: var(--color-navy);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-base, 1rem);
+  background: var(--color-white);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 1px;
+}
+
+.fieldError {
+  color: #c0392b;
+  font-size: var(--text-xs);
+  margin-top: var(--space-1);
+}
+
+.formError {
+  background: #fdecea;
+  color: #c0392b;
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-5);
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.footerRow {
+  margin-top: var(--space-6);
+  text-align: center;
+  font-size: var(--text-sm);
+}
+
+.footerRow a {
+  color: var(--color-orange-dark, var(--color-orange));
+  font-weight: 700;
+}
